@@ -298,14 +298,6 @@ The index method takes 2 arguments:
 Note that indexing a model does not mean it will be persisted to
 mongodb. Use save for that.
 
-### Truncating an index
-
-The static method `esTruncate` will delete all documents from the associated index. This method combined with synchronise can be usefull in case of integration tests for example when each test case needs a cleaned up index in Elasticsearch.
-
-```javascript
-GarbageModel.esTruncate(function(err){...});
-```
-
 ## Mapping
 
 Schemas can be configured to have special options per field. These match

@@ -42,19 +42,5 @@ describe('Truncate', function() {
     mongoose.disconnect();
     done();
   });
-
-  describe('esTruncate', function() {
-    it('should be able to truncate all documents', function(done) {
-      Dummy.esTruncate(function() {
-        Dummy.search({
-          query_string: {
-            query: 'Text1'
-          }
-        }, function(err, results) {
-          results.hits.total.should.eql(0);
-          done(err);
-        });
-      });
-    });
-  });
+  
 });
