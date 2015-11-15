@@ -194,7 +194,7 @@ describe('indexing', function() {
 
     it('should report errors', function(done) {
       Tweet.search({queriez: 'jamescarr'}, function(err, results) {
-        err.message.should.match(/SearchPhaseExecutionException/);
+        err.message.should.match(/(SearchPhaseExecutionException|query_parsing_exception)/);
         should.not.exist(results);
         done();
       });
